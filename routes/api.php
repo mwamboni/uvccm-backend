@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -58,5 +60,33 @@ Route::group(['middleware' => [], 'prefix' => 'branch'], function () {
         Route::get('getAll', 'getBranches');
         Route::post('create', 'createBranch');
         Route::put('update', 'updateBranch');
+    });
+});
+
+Route::group(['middleware' => [], 'prefix' => 'news'], function () {
+    Route::controller(NewsController::class)->group(function() {
+        Route::get('get/{newsId}', 'getNew');
+        Route::get('getAll', 'getNews');
+        Route::get('getByCategory/{categoryId}', 'getNewsByCategory');
+        Route::post('create', 'createNews');
+        Route::put('update', 'updateNews');
+    });
+});
+
+Route::group(['middleware' => [], 'prefix' => 'news-category'], function () {
+    Route::controller(NewsController::class)->group(function() {
+        Route::get('get/{categoryId}', 'getNewsCategory');
+        Route::get('getAll', 'getNewsCategories');
+        Route::post('create', 'createNewsCategory');
+        Route::put('update', 'updateNewsCategory');
+    });
+});
+
+Route::group(['middleware' => [], 'prefix' => 'meeting'], function () {
+    Route::controller(MeetingController::class)->group(function() {
+        Route::get('get/{meetingId}', 'getMeeting');
+        Route::get('getAll', 'getMeetings');
+        Route::post('create', 'createMeeting');
+        Route::put('update', 'updateMeeting');
     });
 });

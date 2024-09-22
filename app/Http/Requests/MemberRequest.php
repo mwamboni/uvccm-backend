@@ -26,7 +26,7 @@ class MemberRequest extends FormRequest
             'middle_name' => 'required|string',
             'last_name' => 'required|string',
             'dob' => 'required|string',
-            'phone' => 'required|string',
+            'phone' => 'required|string|unique:members,phone,'. $this->memberId .',id',
             'gender' => 'required|string',
         ];
     }
@@ -43,7 +43,8 @@ class MemberRequest extends FormRequest
             'middle_name.required' => 'Middle name is required',
             'last_name.required' => 'Last name is required',
             'dob.required' => 'Date of Birth is required',
-            'phone.required' => 'Phone is required',
+            'phone.required' => 'Phone number is required',
+            'phone.unique' => 'Phone number is already registered',
             'gender.required' => 'Gender is required',
         ];
     }

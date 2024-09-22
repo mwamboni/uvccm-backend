@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
-class Ward extends Model
+
+class MeetingMember extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['uid', 'state_id', 'name'];
+    protected $fillable = ['uid', 'meeting_id', 'member_id', 'is_present'];
 
     protected static function boot()
     {
@@ -25,22 +25,22 @@ class Ward extends Model
     }
 
     /**
-     * Get all of the branch for the Ward
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function branch(): HasMany
-    {
-        return $this->hasMany(Branch::class, 'id');
-    }
-
-    /**
-     * Get the state that owns the Ward
+     * Get the meeting that owns the MeetingMember
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function state(): BelongsTo
+    public function meeting(): BelongsTo
     {
-        return $this->belongsTo(State::class, 'state_id');
+        return $this->belongsTo(Meeting::class, 'meeting_id');
+    }
+
+    /**
+     * Get the member that owns the MeetingMember
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function member(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'member_id');
     }
 }

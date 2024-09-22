@@ -51,6 +51,8 @@ class MemberController extends Controller
             'employment_status' => $req->employment_status,
         ]);
 
+        // send_otp_sms((string)$req->phone);
+
         return ApiResponse::success(new MemberResource($member), 'Member created successfully');
     }
 
