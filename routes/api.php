@@ -4,6 +4,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\OTPController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -88,5 +89,12 @@ Route::group(['middleware' => [], 'prefix' => 'meeting'], function () {
         Route::get('getAll', 'getMeetings');
         Route::post('create', 'createMeeting');
         Route::put('update', 'updateMeeting');
+    });
+});
+
+Route::group(['middleware' => [], 'prefix' => 'otp'], function () {
+    Route::controller(OTPController::class)->group(function() {
+        Route::post('request', 'sendOTP');
+        Route::post('verify', 'verifyOTP');
     });
 });

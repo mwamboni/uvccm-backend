@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'sms_apiKey' => env('SMS_API_KEY'),
+    'sms_secretKey' => env('SMS_SECRET_KEY'),
 
     /*
     |--------------------------------------------------------------------------
