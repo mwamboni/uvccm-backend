@@ -24,7 +24,7 @@ class OTPController extends Controller
             "source_addr" => "INFO",
             "schedule_time" => '',
             "encoding" => 0,
-            "message" => "UVCCM OTP" . $userOtp->otp,
+            "message" => "UVCCM OTP  " . $userOtp->otp,
             "recipients" => [
                 [
                     "recipient_id" => 1,
