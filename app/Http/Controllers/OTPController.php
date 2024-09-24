@@ -40,7 +40,8 @@ class OTPController extends Controller
 
 
                 Log::info('SMS sent successfully: ' . $response->body());
-                return $response->body();
+                return ApiResponse::success([], 'OTP sent successfully.');
+
             } else {
                 Log::error('SMS sending failed. Response: ' . $response->body());
                 return false;
@@ -50,8 +51,6 @@ class OTPController extends Controller
             Log::error('Error sending SMS: ' . $e->getMessage());
             return false;
         }
-
-        return ApiResponse::success($userOtp->otp, 'OTP sent successfully.');
     }
 
     public function verifyOTP(OTPRequest $req)
