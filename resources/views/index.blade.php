@@ -676,7 +676,7 @@
             </div>
 
 
-            <div class="bg-body-secondary bg-opacity-50 my-3 pt-3">
+            {{-- <div class="bg-body-secondary bg-opacity-50 my-3 pt-3">
                 <div class="content__boxed">
                     <div class="content__wrap">
 
@@ -857,10 +857,10 @@
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
 
-            <div class="content__boxed">
+            {{-- <div class="content__boxed">
                 <div class="content__wrap">
 
 
@@ -1042,7 +1042,7 @@
 
 
                 </div>
-            </div>
+            </div> --}}
 
 
             <!-- FOOTER -->
@@ -1050,15 +1050,7 @@
             <footer class="mt-auto">
                 <div class="content__boxed">
                     <div class="content__wrap py-3 py-md-1 d-flex flex-column flex-md-row align-items-md-center">
-                        <div class="text-nowrap mb-4 mb-md-0">Copyright &copy; 2024 <a href="#"
-                                class="ms-1 btn-link fw-bold">My Company</a></div>
-                        <nav class="nav flex-column gap-1 flex-md-row gap-md-3 ms-md-auto">
-                            <a class="nav-link link-offset-3 link-underline-hover px-0" href="#">Policy
-                                Privacy</a>
-                            <a class="nav-link link-offset-3 link-underline-hover px-0" href="#">Terms and
-                                conditions</a>
-                            <a class="nav-link link-offset-3 link-underline-hover px-0" href="#">Contact Us</a>
-                        </nav>
+                        <div class="text-nowrap mb-4 mb-md-0">Copyright &copy; 2024 <a href="#" class="ms-1 btn-link fw-bold">UVCCM</a></div>
                     </div>
                 </div>
             </footer>
