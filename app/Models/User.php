@@ -31,6 +31,7 @@ class User extends Authenticatable
     protected $fillable = [
         'uid',
         'name',
+        'branch_id',
         'email',
         'password',
     ];
@@ -66,5 +67,10 @@ class User extends Authenticatable
     public function meetingMember(): HasMany
     {
         return $this->hasMany(MeetingMember::class, 'id');
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

@@ -11,7 +11,7 @@
                 <!-- Profile picture  -->
                 <div class="mininav-toggle text-center py-2">
                     <img class="mainnav__avatar img-md rounded-circle hv-oc"
-                        src="assets/img/profile-photos/1.png" alt="Profile Picture">
+                        src="{{ asset('assets/img/profile-photos/1.png') }}" alt="Profile Picture">
                 </div>
 
 
@@ -57,44 +57,22 @@
 
                     </div>
                 </div>
-
             </div>
-            <!-- End - Profile widget -->
 
-
-            <!-- Navigation Category -->
             <div class="mainnav__categoriy py-3">
                 <h6 class="mainnav__caption mt-0 fw-bold">Navigation</h6>
                 <ul class="mainnav__menu nav flex-column">
 
-                    <!-- Link with submenu -->
                     <li class="nav-item has-sub">
-
-
-                        <a href="#" class="mininav-toggle nav-link active collapsed"><i class="demo-pli-home fs-5 me-2"></i>
+                        <a href="#" class="mininav-toggle nav-link collapsed"><i class="demo-pli-home fs-5 me-2"></i>
                             <span class="nav-label ms-1">Dashboard</span>
                         </a>
 
-                        <!-- Dashboard submenu list -->
-                        {{-- <ul class="mininav-content nav collapse">
-                            <li data-popper-arrow class="arrow"></li>
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link active">Dashboard 1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard-2/index.html" class="nav-link">Dashboard 2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard-3/index.html" class="nav-link">Dashboard 3</a>
-                            </li>
-
-                        </ul> --}}
-                        <!-- END : Dashboard submenu list -->
-
+                        <a href="{{ route('users.all') }}" class="mininav-toggle nav-link collapsed {{ request()->routeIs('users.all') ? 'active' : '' }}"><i class="demo-pli-home fs-5 me-2"></i>
+                            <span class="nav-label ms-1">Manage users</span>
+                        </a>
                     </li>
-                    <!-- END : Link with submenu -->
 
-                    <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
 
@@ -144,28 +122,10 @@
                         <!-- END : Layouts submenu list -->
 
                     </li>
-                    <!-- END : Link with submenu -->
-
-                    <!-- Regular menu link -->
-                    <li class="nav-item">
-                        <a href="widgets/index.html" class="nav-link mininav-toggle"><i
-                                class="demo-pli-gear fs-5 me-2"></i>
-
-                            <span class="nav-label mininav-content ms-1">
-                                <span data-popper-arrow class="arrow"></span>
-                                Widgets
-                            </span>
-                        </a>
-                    </li>
-                    <!-- END : Regular menu link -->
                 </ul>
             </div>
-            <!-- END : Navigation Category -->
         </div>
-        <!-- End - Navigation menu -->
 
-
-        <!-- Bottom navigation menu -->
         <div class="mainnav__bottom-content border-top pb-2">
             <ul id="mainnav" class="mainnav__menu nav flex-column">
                 <li class="nav-item has-sub">
@@ -176,8 +136,5 @@
                 </li>
             </ul>
         </div>
-        <!-- End - Bottom navigation menu -->
-
-
     </div>
 </nav>
