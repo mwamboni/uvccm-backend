@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user_o_t_p_s', function (Blueprint $table) {
             $table->id();
             $table->string('uid', 100)->unique();
-            $table->string('phone', 100)->unique();
+            $table->string('phone', 100);
             $table->string('otp', 100);
             $table->timestamp('expired_at')->nullable();
             $table->string('mac_address', 100)->nullable();
