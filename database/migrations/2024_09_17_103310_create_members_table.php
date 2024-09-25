@@ -21,12 +21,14 @@ return new class extends Migration
             $table->enum('id_card_type', ['NIDA', 'ZANID'])->nullable();
             $table->string('id_card')->nullable();
             $table->string('phone', 15)->nullable();
-            $table->enum('gender', ['Male', 'Female'])->nullable();
+            $table->enum('gender', ['Mwanamke', 'Mwanamme'])->nullable();
             $table->date('dob')->nullable();
-            $table->enum('disability_status', ['Yes', 'No'])->nullable()->default('No');
+            $table->enum('disability_status', ['Ndio', 'Hapana'])->nullable()->default('Hapana');
             $table->string('disablity')->nullable();
             $table->string('disability_description')->nullable();
-            $table->enum('employment_status',['Yes', 'No'])->nullable()->default('No');
+            $table->enum('employment_status',['Ndio', 'Hapana'])->nullable()->default('Ndio');
+            $table->enum('employment_sector',['Serikali', 'Binafsi'])->nullable();
+            $table->string('employment_institute')->nullable();
             $table->timestamps();
         });
     }
