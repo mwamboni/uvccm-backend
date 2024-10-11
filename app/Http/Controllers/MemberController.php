@@ -79,7 +79,7 @@ class MemberController extends Controller
         return ApiResponse::success([],'Member updated successfully');
     }
   
-    public function checkphone(Request $request)
+    public function checkMember(Request $request)
     {
         $request->validate([
             'phone' => 'required|numeric',
