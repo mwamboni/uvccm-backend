@@ -16,6 +16,7 @@ Route::get('/user', function (Request $request) {
 Route::group(['middleware' => [], 'prefix' => 'member'], function () {
     Route::controller(MemberController::class)->group(function() {
         Route::post('create', 'createMember');
+        Route::post('check', 'checkMember');
     });
 });
 
