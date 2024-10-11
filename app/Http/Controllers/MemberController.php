@@ -78,4 +78,22 @@ class MemberController extends Controller
 
         return ApiResponse::success([],'Member updated successfully');
     }
+    public function checkphone(Request $request)
+    {
+        $request->validate([
+            'phone' => 'required|numeric',
+        ]);
+        $phoneExists = Member::where('phone', $request->phone)->exists();
+        if ($phoneExists) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Phone number already exists.',
+            ], 409); 
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Phone number is available.',
+        ], 200); 
+    }
+    
 }
