@@ -89,11 +89,13 @@ class MemberController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Phone number already exists.',
+                'successCode' =>0,
             ], 409); 
         }
         return response()->json([
             'status' => 'success',
-            'message' => 'Phone number is available.',
+            'message' => 'Phone number is available',
+            'successCode' =>1,
         ], 200); 
     }
 }
