@@ -9,7 +9,7 @@ use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
-{
+{b
     public function getMember($memberId)
     {
         $member = Member::find($memberId);
